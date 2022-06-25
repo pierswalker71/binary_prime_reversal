@@ -20,7 +20,7 @@ def main():
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/')    
     
     st.write('The process to generate the values comprises the following steps:')
-    st.write('1. Generate a list of prime numbers up to the defined maximum limit.')
+    st.markdown('\*1. Generate a list of prime numbers up to the defined maximum limit.')
     st.write('2. Convert the primes into their binary equivalient.')
     st.write('3. Reverse the order of the binary characters in each number.')
     st.write('4. Convert these reversed binary numbers back to decimal numbers.')
@@ -77,7 +77,7 @@ def main():
   
     
     #==================================================================  
-    st.write('Example table showing the first few primes')
+    st.write('Here is an example table showing the first few primes')
     table_max_num = 20
     prime_num_list1, binary_num_list1, reverse_binary_num_list1, dec_reverse_binary_num_list1, result1 = binary_prime_reversal(table_max_num)
     #df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Prime in Binary':['10','11','101','111','1011','1101','10001','10011'],
