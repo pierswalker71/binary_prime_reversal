@@ -102,14 +102,14 @@ def main():
     
     return(prime_num_list, result)
   
-    prime_num_list, result = binary_prime_reversal(max_num)
+    prime_num_list1, result = binary_prime_reversal(max_num)
     
     #------------------------------------------------------------------
     # Plot results
     st.header('Output')
     fig,ax = plt.subplots(figsize=(15,6))
 
-    ax.plot(prime_num_list,result, marker, markersize=markersize)
+    ax.plot(prime_num_list1,result, marker, markersize=markersize)
 
     ax.set(xlabel='Primes',ylabel='Result') 
     ax.set_title(f'Graph for Sequence of Prime less than {max_num}', weight='bold',size=14)
