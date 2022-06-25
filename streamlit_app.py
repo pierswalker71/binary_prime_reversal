@@ -21,7 +21,7 @@ def main():
     
     st.markdown('The process to generate the values comprises the following steps:')
     st.markdown('1. Generate a list of prime numbers up to the defined maximum limit.')
-        #     2. Convert the primes into their binary equivalient.<br>\
+    st.write('2. Convert the primes into their binary equivalient.')
          #    3. Reverse the order of the binary characters in each number.<br>\
           #   4. Convert these reversed binary numbers back to decimal numbers.<br>\
            #  5. Subtract these reversed numbers from the original prime numbers.<br>\
