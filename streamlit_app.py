@@ -75,16 +75,16 @@ def main():
     
         return(prime_num_list, binary_num_list, reverse_binary_num_list, dec_reverse_binary_num_list, result)
   
-    prime_num_list, binary_num_list, reverse_binary_num_list, dec_reverse_binary_num_list, result = binary_prime_reversal(max_num)
+    
     #==================================================================  
     st.write('Example table showing the first few primes')
     table_max_num = 20
-    prime_num_list, binary_num_list, reverse_binary_num_list, dec_reverse_binary_num_list, result = binary_prime_reversal(table_max_num)
+    prime_num_list1, binary_num_list1, reverse_binary_num_list1, dec_reverse_binary_num_list1, result1 = binary_prime_reversal(table_max_num)
     #df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Prime in Binary':['10','11','101','111','1011','1101','10001','10011'],
     #                       'Backward':['01','11','101','111','1101','1011','10001','11001'],
     #                        'Results':[1,0,0,0,-2,2,0,-6]})
-    df = pd.DataFrame(data={'Prime':prime_num_list, 'Prime in Binary':binary_num_list,'Backwards Binary':reverse_binary_num_list,
-                            'New Decimal':dec_reverse_binary_num_list,'Result':[1,0,0,0,-2,2,0,-6]})   
+    df = pd.DataFrame(data={'Prime':prime_num_list1, 'Prime in Binary':binary_num_list1,'Backwards Binary':reverse_binary_num_list1,
+                            'New Decimal':dec_reverse_binary_num_list1,'Result':result1})   
 
                             
     st.dataframe(df)  
@@ -102,7 +102,9 @@ def main():
     marker = st.selectbox('shape', [x for x in markers.keys()])
     
     marker = colours[colour] + markers[marker]
-
+    #==================================================================
+    # Call function
+    prime_num_list, binary_num_list, reverse_binary_num_list, dec_reverse_binary_num_list, result = binary_prime_reversal(max_num)
     
     #==================================================================
     # Plot results
