@@ -7,7 +7,7 @@ def main():
     import pandas as pd
     import matplotlib.pyplot as plt
 
-    #------------------------------------------------------------------
+    #==================================================================
     # Settings
     st.set_page_config(page_title = 'binary_prime_reversal') 
     
@@ -27,7 +27,7 @@ def main():
     st.write('5. Subtract these reversed numbers from the original prime numbers.')
     st.write('6. Plot the results numbers against the original primes')
     
-    #------------------------------------------------------------------
+    #==================================================================
 
     # Define functions
     def generate_primes(min,max):
@@ -42,41 +42,14 @@ def main():
                     prime_num_list.append(num)
 
         return(prime_num_list)
-
+    #-------------------------
     def reverse(num):
       # Reverses a string
         num_rev_list = list(reversed(str(num)))
         num_rev = int("".join(num_rev_list))
 
         return(num_rev)
-
-    #------------------------------------------------------------------  
-    st.write('Example table showing the first few primes')
-    table_max_num = 20
-    df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
-                           'Backward':['01','11','101','111','1101','1011','10001','11001'],
-                            'Results':[1,0,0,0,-2,2,0,-6]})
-    
-
-                            
-    st.dataframe(df)  
-      
-    #------------------------------------------------------------------
-    # User setings 
-    st.header('Settings')
-    max_num = st.number_input('Maximum value (1000 - 30000)', min_value=2, max_value=30000, value=10000, step=1000) 
-       
-    colours = {'red':'r','blue':'b','green':'g','yellow':'y','black':'k'}
-    markers = {'point':'.', 'circle':'o', 'star':'*', 'cross':'x'}
-       
-    markersize = st.number_input('marker size (1 - 10)', min_value=1, max_value=10, value=5) 
-    colour = st.selectbox('colour', [x for x in colours.keys()])
-    marker = st.selectbox('shape', [x for x in markers.keys()])
-    
-    marker = colours[colour] + markers[marker]
-
-    #------------------------------------------------------------------
-    
+    #-------------------------  
     def binary_prime_reversal(max_num):
       
         # Create list of primes
@@ -100,16 +73,43 @@ def main():
         # Calculate result
         result = list(np.array(prime_num_list)- np.array(dec_reverse_binary_num_list))
     
-        return(prime_num_list, result)
+        return(prime_num_list, binary_num_list, reverse_binary_num_list, dec_reverse_binary_num_list, result)
   
-    prime_num_list1, result = binary_prime_reversal(max_num)
+    prime_num_list, binary_num_list, reverse_binary_num_list, dec_reverse_binary_num_list, result = binary_prime_reversal(max_num)
+    #==================================================================  
+    st.write('Example table showing the first few primes')
+    table_max_num = 20
+    prime_num_list, binary_num_list, reverse_binary_num_list, dec_reverse_binary_num_list, result = binary_prime_reversal(table_max_num)
+    #df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Prime in Binary':['10','11','101','111','1011','1101','10001','10011'],
+    #                       'Backward':['01','11','101','111','1101','1011','10001','11001'],
+    #                        'Results':[1,0,0,0,-2,2,0,-6]})
+    df = pd.DataFrame(data={'Prime':prime_num_list, 'Prime in Binary':binary_num_list,'Backwards Binary':reverse_binary_num_list,
+                            'New Decimal':dec_reverse_binary_num_list,'Result':[1,0,0,0,-2,2,0,-6]})   
+
+                            
+    st.dataframe(df)  
+      
+    #==================================================================
+    # User setings 
+    st.header('Settings')
+    max_num = st.number_input('Maximum value (1000 - 30000)', min_value=2, max_value=30000, value=10000, step=1000) 
+       
+    colours = {'red':'r','blue':'b','green':'g','yellow':'y','black':'k'}
+    markers = {'point':'.', 'circle':'o', 'star':'*', 'cross':'x'}
+       
+    markersize = st.number_input('marker size (1 - 10)', min_value=1, max_value=10, value=5) 
+    colour = st.selectbox('colour', [x for x in colours.keys()])
+    marker = st.selectbox('shape', [x for x in markers.keys()])
     
-    #------------------------------------------------------------------
+    marker = colours[colour] + markers[marker]
+
+    
+    #==================================================================
     # Plot results
     st.header('Output')
     fig,ax = plt.subplots(figsize=(15,6))
 
-    ax.plot(prime_num_list1,result, marker, markersize=markersize)
+    ax.plot(prime_num_list,result, marker, markersize=markersize)
 
     ax.set(xlabel='Primes',ylabel='Result') 
     ax.set_title(f'Graph for Sequence of Prime less than {max_num}', weight='bold',size=14)
