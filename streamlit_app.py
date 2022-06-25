@@ -14,7 +14,7 @@ def main():
     # Title
     st.title('Graph of "Binary Prime Reversal" Sequence')
     st.write('Piers Walker 2022. https://github.com/pierswalker71')
-    st.markdown('Generate the amazing graph presented in Numberphile<br> video https://www.youtube.com/watch?v=pAMgUB51XZA at time 7:47', unsafe_allow_html=True)
+    st.markdown('Generate the amazing graph presented in Numberphile video<br>https://www.youtube.com/watch?v=pAMgUB51XZA at time 7:47', unsafe_allow_html=True)
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/') 
     
     st.header('Sequence Generation')
