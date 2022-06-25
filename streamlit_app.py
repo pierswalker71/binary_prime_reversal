@@ -6,7 +6,7 @@ def main():
     import numpy as np # np can convert between numerical bases
     import matplotlib.pyplot as plt
 
-    
+    #------------------------------------------------------------------
     # Settings
     st.set_page_config(page_title = 'binary_prime_reversal') 
     
@@ -15,12 +15,17 @@ def main():
     st.write('Piers Walker 2022. https://github.com/pierswalker71')
     st.write('Generate the amazing graph presented in Numberphile video https://www.youtube.com/watch?v=pAMgUB51XZA at time 7:47')
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/') 
+    
+    df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19,25], 'Binary':[10,11,101,111,1011,1101,10001,10011,10111],
+                            'Backward':[01,11,101,111,1101,1011,10001,11001,11101],
+                            'Results':[1,0,0,0,-2,2,0,-6]})
+    
+    
+    st.write('the process to generate the values is...')
+    st.write('Example table showing the first few primes')
+    st.dataframe(df)
 
-
-
-    # Import libraries
-    import numpy as np # np can convert between numerical bases
-    import matplotlib.pyplot as plt
+    #------------------------------------------------------------------
 
     # Define functions
     def generate_primes(min,max):
