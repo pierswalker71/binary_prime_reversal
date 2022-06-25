@@ -19,13 +19,13 @@ def main():
     st.header('Sequence Generation')
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/')    
     
-    st.markdown('The process to generate the values comprises the following steps:')
-    st.markdown('1. Generate a list of prime numbers up to the defined maximum limit.')
+    st.write('The process to generate the values comprises the following steps:')
+    st.write('1. Generate a list of prime numbers up to the defined maximum limit.')
     st.write('2. Convert the primes into their binary equivalient.')
-         #    3. Reverse the order of the binary characters in each number.<br>\
-          #   4. Convert these reversed binary numbers back to decimal numbers.<br>\
-           #  5. Subtract these reversed numbers from the original prime numbers.<br>\
-            # 6. Plot the results numbers against the original primes')
+    st.write('3. Reverse the order of the binary characters in each number.')
+    st.write('4. Convert these reversed binary numbers back to decimal numbers.')
+    st.write('5. Subtract these reversed numbers from the original prime numbers.')
+    st.write('6. Plot the results numbers against the original primes')
     
     st.write('Example table showing the first few primes')
     df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
