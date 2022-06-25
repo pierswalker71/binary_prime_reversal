@@ -43,8 +43,20 @@ def main():
 
         return(num_rev)
 
-    max_num = st.number_input('maximum prime number (2 - 30000)', min_value=2, max_value=30000, value=1000) 
+    #------------------------------------------------------------------
+    # User setings 
+    max_num = st.number_input('maximum prime number (2 - 30000)', min_value=2, max_value=30000, value=10000) 
+       
+    colours = {'red':'r','blue':'b','green':'g','yellow':'y','black':'k'}
+    markers = {'point':'.', 'circle':'o', 'star':'*', 'cross':'x'}
+       
+    markersize = st.number_input('marker size (0.01 - 10.0)', min_value=0.01, max_value=10.0, value=0.5) 
+    colour = st.selectbox('colour', [x for x in colours.keys()])
+    marker = st.selectbox('shape', [x for x in markers.keys()])
+    
+    marker = colours[colour] + markers[marker]
 
+    #------------------------------------------------------------------
     # Create list of primes
     prime_num_list = generate_primes(1,max_num)
 
@@ -65,11 +77,12 @@ def main():
 
     # Calculate result
     result = list(np.array(prime_num_list)- np.array(dec_reverse_binary_num_list))
-
+    
+    #------------------------------------------------------------------
     # Plot results
     fig,ax = plt.subplots(figsize=(15,6))
 
-    ax.plot(prime_num_list,result,'b+')
+    ax.plot(prime_num_list,result, marker, markersize=markersize)
 
     ax.set(xlabel='Primes',ylabel='Result') 
     ax.set_title(f'Result for Max Prime of {max_num}', weight='bold',size=14)
