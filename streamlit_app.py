@@ -27,12 +27,6 @@ def main():
     st.write('5. Subtract these reversed numbers from the original prime numbers.')
     st.write('6. Plot the results numbers against the original primes')
     
-    st.write('Example table showing the first few primes')
-    df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
-                           'Backward':['01','11','101','111','1101','1011','10001','11001'],
-                            'Results':[1,0,0,0,-2,2,0,-6]})
-    st.dataframe(df)
-
     #------------------------------------------------------------------
 
     # Define functions
@@ -56,6 +50,17 @@ def main():
 
         return(num_rev)
 
+    #------------------------------------------------------------------  
+    st.write('Example table showing the first few primes')
+    table_max_num = 20
+    df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
+                           'Backward':['01','11','101','111','1101','1011','10001','11001'],
+                            'Results':[1,0,0,0,-2,2,0,-6]})
+    
+
+                            
+    st.dataframe(df)  
+      
     #------------------------------------------------------------------
     # User setings 
     st.header('Settings')
@@ -71,26 +76,33 @@ def main():
     marker = colours[colour] + markers[marker]
 
     #------------------------------------------------------------------
-    # Create list of primes
-    prime_num_list = generate_primes(1,max_num)
+    
+    def binary_prime_reversal(max_num):
+      
+        # Create list of primes
+        prime_num_list = generate_primes(1,max_num)
 
-    # Convert decimal to binary
-    binary_num_list = []
-    for p in range(0,len(prime_num_list)):
-        binary_num_list.append(int(np.binary_repr(prime_num_list[p])))
+        # Convert decimal to binary
+        binary_num_list = []
+        for p in range(0,len(prime_num_list)):
+            binary_num_list.append(int(np.binary_repr(prime_num_list[p])))
 
-    # Reverse binary values
-    reverse_binary_num_list = []
-    for b in range(0,len(prime_num_list)):
-        reverse_binary_num_list.append(reverse(binary_num_list[b]))
+        # Reverse binary values
+        reverse_binary_num_list = []
+        for b in range(0,len(prime_num_list)):
+             reverse_binary_num_list.append(reverse(binary_num_list[b]))
 
-    # Convert binary to decimal.  int(str(1101),2) converts from base 
-    dec_reverse_binary_num_list = []
-    for d in range(0,len(prime_num_list)):
-        dec_reverse_binary_num_list.append(int(str(reverse_binary_num_list[d]),2))
+        # Convert binary to decimal.  int(str(1101),2) converts from base 
+        dec_reverse_binary_num_list = []
+        for d in range(0,len(prime_num_list)):
+            dec_reverse_binary_num_list.append(int(str(reverse_binary_num_list[d]),2))
 
-    # Calculate result
-    result = list(np.array(prime_num_list)- np.array(dec_reverse_binary_num_list))
+        # Calculate result
+        result = list(np.array(prime_num_list)- np.array(dec_reverse_binary_num_list))
+    
+    return result
+  
+    result = binary_prime_reversal(max_num)
     
     #------------------------------------------------------------------
     # Plot results
