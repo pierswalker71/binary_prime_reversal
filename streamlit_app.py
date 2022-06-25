@@ -17,7 +17,7 @@ def main():
     st.write('Generate the amazing graph presented in Numberphile video https://www.youtube.com/watch?v=pAMgUB51XZA at time 7:47')
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/')    
     
-    st.write('The process to generate the values comprises the following steps:<br> \
+    st.markdown('The process to generate the values comprises the following steps:<br> \
              1) Generate a list of prime numbers.<br> \
              2) Convert the primes into their binary equivalient.<br>\
              3) Reverse the order of the binary characters.<br>\
