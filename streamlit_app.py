@@ -100,7 +100,7 @@ def main():
         # Calculate result
         result = list(np.array(prime_num_list)- np.array(dec_reverse_binary_num_list))
     
-    return(prime_num_list, result)
+        return(prime_num_list, result)
   
     prime_num_list1, result = binary_prime_reversal(max_num)
     
