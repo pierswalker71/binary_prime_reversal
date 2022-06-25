@@ -19,13 +19,13 @@ def main():
     st.header('Sequence Generation')
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/')    
     
-    st.markdown('The process to generate the values comprises the following steps: \
-             1. Generate a list of prime numbers.<br> \
-             2. Convert the primes into their binary equivalient.<br>\
-             3. Reverse the order of the binary characters.<br>\
-             4. Convert these reversed binary numbers back to decimals.<br>\
-             5. Subtract these reversed numbers from the original prime numbers.<br>\
-             6. Plot the two sets of values')
+    st.markdown('The process to generate the values comprises the following steps:')
+    st.markdown('1. Generate a list of prime numbers up to the defined maximum limit.')
+        #     2. Convert the primes into their binary equivalient.<br>\
+         #    3. Reverse the order of the binary characters in each number.<br>\
+          #   4. Convert these reversed binary numbers back to decimal numbers.<br>\
+           #  5. Subtract these reversed numbers from the original prime numbers.<br>\
+            # 6. Plot the results numbers against the original primes')
     
     st.write('Example table showing the first few primes')
     df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
@@ -59,7 +59,7 @@ def main():
     #------------------------------------------------------------------
     # User setings 
     st.header('Settings')
-    max_num = st.number_input('maximum prime number (2 - 30000)', min_value=2, max_value=30000, value=10000) 
+    max_num = st.number_input('Maximum value (1000 - 30000)', min_value=2, max_value=30000, value=10000, step=1000) 
        
     colours = {'red':'r','blue':'b','green':'g','yellow':'y','black':'k'}
     markers = {'point':'.', 'circle':'o', 'star':'*', 'cross':'x'}
