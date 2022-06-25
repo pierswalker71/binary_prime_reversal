@@ -12,7 +12,7 @@ def main():
     st.set_page_config(page_title = 'binary_prime_reversal') 
     
     # Title
-    st.title('Binary Prime Reversal Amazing Graph')
+    st.title('Graph of "Binary Prime Reversal" Sequence')
     st.write('Piers Walker 2022. https://github.com/pierswalker71')
     st.write('Generate the amazing graph presented in Numberphile video https://www.youtube.com/watch?v=pAMgUB51XZA at time 7:47')
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/') 
@@ -51,6 +51,7 @@ def main():
 
     #------------------------------------------------------------------
     # User setings 
+    st.subheader('Setting')
     max_num = st.number_input('maximum prime number (2 - 30000)', min_value=2, max_value=30000, value=10000) 
        
     colours = {'red':'r','blue':'b','green':'g','yellow':'y','black':'k'}
@@ -86,6 +87,7 @@ def main():
     
     #------------------------------------------------------------------
     # Plot results
+    st.subheader('Output')
     fig,ax = plt.subplots(figsize=(15,6))
 
     ax.plot(prime_num_list,result, marker, markersize=markersize)
