@@ -15,15 +15,20 @@ def main():
     st.title('Graph of "Binary Prime Reversal" Sequence')
     st.write('Piers Walker 2022. https://github.com/pierswalker71')
     st.write('Generate the amazing graph presented in Numberphile video https://www.youtube.com/watch?v=pAMgUB51XZA at time 7:47')
-    st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/') 
+    st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/')    
     
-    df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
-                            'Backward':['01','11','101','111','1101','1011','10001','11001'],
-                            'Results':[1,0,0,0,-2,2,0,-6]})
+    st.write('The process to generate the values comprises the following steps:<br> \
+             1) Generate a list of prime numbers.<br> \
+             2) Convert the primes into their binary equivalient.<br>\
+             3) Reverse the order of the binary characters.<br>\
+             4) Convert these reversed binary numbers back to decimals.<br>\
+             5) Subtract these reversed numbers from the original prime numbers.<br>\
+             6) Plot the two sets of values')
     
-    
-    st.write('the process to generate the values is...')
     st.write('Example table showing the first few primes')
+    df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
+                           'Backward':['01','11','101','111','1101','1011','10001','11001'],
+                            'Results':[1,0,0,0,-2,2,0,-6]})
     st.dataframe(df)
 
     #------------------------------------------------------------------
