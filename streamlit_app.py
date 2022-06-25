@@ -51,13 +51,13 @@ def main():
 
     #------------------------------------------------------------------
     # User setings 
-    st.subheader('Setting')
+    st.subheader('Settings')
     max_num = st.number_input('maximum prime number (2 - 30000)', min_value=2, max_value=30000, value=10000) 
        
     colours = {'red':'r','blue':'b','green':'g','yellow':'y','black':'k'}
     markers = {'point':'.', 'circle':'o', 'star':'*', 'cross':'x'}
        
-    markersize = st.number_input('marker size (0.01 - 10.0)', min_value=0.01, max_value=10.0, value=0.5) 
+    markersize = st.number_input('marker size (1 - 10)', min_value=1, max_value=10, value=5) 
     colour = st.selectbox('colour', [x for x in colours.keys()])
     marker = st.selectbox('shape', [x for x in markers.keys()])
     
