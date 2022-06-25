@@ -20,7 +20,9 @@ def main():
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/')    
     
     st.write('The process to generate the values comprises the following steps:')
-    st.markdown('\*1. Generate a list of prime numbers up to the defined maximum limit.')
+    st.markdown('1. Generate a list of prime numbers up to the defined maximum limit.
+                2. sdsds
+                3. sdfsdfds')
     st.write('2. Convert the primes into their binary equivalient.')
     st.write('3. Reverse the order of the binary characters in each number.')
     st.write('4. Convert these reversed binary numbers back to decimal numbers.')
