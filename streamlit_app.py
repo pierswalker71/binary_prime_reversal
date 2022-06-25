@@ -100,7 +100,7 @@ def main():
     ax.plot(prime_num_list,result, marker, markersize=markersize)
 
     ax.set(xlabel='Primes',ylabel='Result') 
-    ax.set_title(f'Result for Max Prime of {max_num}', weight='bold',size=14)
+    ax.set_title(f'Graph for Sequence of Prime less than {max_num}', weight='bold',size=14)
     ax.tick_params(axis='x',labelsize=14)
     ax.tick_params(axis='y',labelsize=12)
     ax.xaxis.label.set_fontsize(15)
