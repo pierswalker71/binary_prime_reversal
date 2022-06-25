@@ -78,7 +78,7 @@ def main():
     ax.xaxis.label.set_fontsize(15)
     ax.yaxis.label.set_fontsize(15)
     ax.grid()
-
+    
     st.pyplot(fig)
     
     
