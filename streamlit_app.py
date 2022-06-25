@@ -100,9 +100,9 @@ def main():
         # Calculate result
         result = list(np.array(prime_num_list)- np.array(dec_reverse_binary_num_list))
     
-    return result
+    return prime_num_list, result
   
-    result = binary_prime_reversal(max_num)
+    prime_num_list, result = binary_prime_reversal(max_num)
     
     #------------------------------------------------------------------
     # Plot results
