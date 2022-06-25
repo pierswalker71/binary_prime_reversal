@@ -15,15 +15,17 @@ def main():
     st.title('Graph of "Binary Prime Reversal" Sequence')
     st.write('Piers Walker 2022. https://github.com/pierswalker71')
     st.write('Generate the amazing graph presented in Numberphile video https://www.youtube.com/watch?v=pAMgUB51XZA at time 7:47')
+    
+    st.header('Sequence Generation')
     st.write('Sequence described by Neil Sloane, founder of The On-Line Encyclopedia of Integer Sequences: https://oeis.org/')    
     
-    st.markdown('The process to generate the values comprises the following steps:<br> \
-             1) Generate a list of prime numbers.<br> \
-             2) Convert the primes into their binary equivalient.<br>\
-             3) Reverse the order of the binary characters.<br>\
-             4) Convert these reversed binary numbers back to decimals.<br>\
-             5) Subtract these reversed numbers from the original prime numbers.<br>\
-             6) Plot the two sets of values')
+    st.markdown('The process to generate the values comprises the following steps: \
+             1. Generate a list of prime numbers.<br> \
+             2. Convert the primes into their binary equivalient.<br>\
+             3. Reverse the order of the binary characters.<br>\
+             4. Convert these reversed binary numbers back to decimals.<br>\
+             5. Subtract these reversed numbers from the original prime numbers.<br>\
+             6. Plot the two sets of values')
     
     st.write('Example table showing the first few primes')
     df = pd.DataFrame(data={'Prime':[2,3,5,7,11,13,17,19], 'Binary':['10','11','101','111','1011','1101','10001','10011'],
@@ -56,7 +58,7 @@ def main():
 
     #------------------------------------------------------------------
     # User setings 
-    st.subheader('Settings')
+    st.header('Settings')
     max_num = st.number_input('maximum prime number (2 - 30000)', min_value=2, max_value=30000, value=10000) 
        
     colours = {'red':'r','blue':'b','green':'g','yellow':'y','black':'k'}
@@ -92,7 +94,7 @@ def main():
     
     #------------------------------------------------------------------
     # Plot results
-    st.subheader('Output')
+    st.header('Output')
     fig,ax = plt.subplots(figsize=(15,6))
 
     ax.plot(prime_num_list,result, marker, markersize=markersize)
